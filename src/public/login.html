@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- favicon link -->
+    <link rel="shortcut icon" href="../assets/building-columns-solid.svg" type="image/x-icon">
+    <!-- output.css -->
+    <link rel="stylesheet" href="../style/output.css">
+    <!-- title section -->
+    <title>Login</title>
+    <!-- fontawesome link -->
+    <script src="https://kit.fontawesome.com/7f4f6e1f8e.js" crossorigin="anonymous"></script>
+    <!-- lordicon link -->
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+</head>
+
+<body class="h-[100vh] bg-blue-800 flex items-center justify-center">
+    <form id="loginForm" action="" class="w-[20rem] md:w-[25rem] h-[30rem] bg-white shadow-2xl rounded-md flex flex-col items-center px-[2rem] py-[3rem] gap-4">
+        <div class="flex flex-col items-center">
+            <div class="w-[6rem] h-[6rem] px-1 py-2 flex items-center justify-center border-[.1rem] border-solid bg-white rounded-full shadow-[5px_5px_11px_#bebebe,-5px_-5px_11px_#ffffff]">
+                <lord-icon src="https://cdn.lordicon.com/fsvddbfp.json" class="w-[5rem] h-[5rem]"  trigger="in"
+                    delay="200" state="in-reveal">
+                </lord-icon>
+            </div>
+            <h2 class="heading2 ">My Bank</h2>
+        </div>
+        <div class="flex flex-col w-full gap-3">
+            <input type="text" id="loginAcc" placeholder="Account Number" class="txtbox" required>
+            <input type="password" id="loginPass" placeholder="Password" class="txtbox" required>
+            <a href="#" class="text-blue-600 hover:text-blue-800 hover:underline">Forget password ?</a>
+        </div>
+        <div class="w-full flex flex-col gap-2">
+            <button
+            class="w-full h-[2.5rem] text-white font-bold bg-blue-500 border-2 border-solid border-transparent  hover:bg-blue-700 hover:shadow-lg transition-all ease-linear duration-150 rounded-md " onclick="login()">Login</button>
+            <p class="text-center">Doesnt have any account ? <a href="./signup.html" class="text-blue-600 hover:text-blue-800 hover:underline">Sign up</a></p>
+        </div>
+    </form>
+    <!-- index.js -->
+    <script src="./index.js"></script>
+    <!-- flowbite javasript file -->
+    <script src="../../node_modules/flowbite/dist/flowbite.min.js"></script>
+</body>
+
+</html>

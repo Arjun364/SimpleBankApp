@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- favicon link -->
+    <link rel="shortcut icon" href="../assets/building-columns-solid.svg" type="image/x-icon">
+    <!-- output.css -->
+    <link rel="stylesheet" href="../style/output.css">
+    <!-- title section -->
+    <title>Home page</title>
+    <!-- fontawesome link -->
+    <script src="https://kit.fontawesome.com/7f4f6e1f8e.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <nav class="w-full bg-white border-gray-200 shadow-md absolute">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="" class="flex items-center text-blue-500 space-x-3 rtl:space-x-reverse">
+                <i class="fa-solid fa-building-columns text-2xl"></i>
+                <span class="self-center text-2xl font-bold whitespace-nowrap ">My Bank</span>
+            </a>
+            <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                <button type="button"
+                    class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-4 py-2 text-center "
+                    onclick="logout()">Log
+                    out</button>
+                <button data-collapse-toggle="navbar-cta" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 "
+                    aria-controls="navbar-cta" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
+                <ul
+                    class="flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white font-bold ">
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 md:p-0 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 "
+                            aria-current="page">Home</a>
+                    </li>
+                    <li>
+                        <a href="#transaction"
+                            class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 ">Withdraw</a>
+                    </li>
+                    <li>
+                        <a href="#transaction"
+                            class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 ">Deposite</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 ">help</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- dashboard section  -->
+    <section
+        class="w-full h-[65vh] lg:h-[100Vh] bg-slate-100 flex flex-col justify-center items-center px-[1.3rem] lg:px-[6.5rem] lg:py-[2rem] py-[1.3rem] gap-4">
+        <h2 class="heading2" id="welcometext">Welcome user</h2>
+        <div class=" w-full  bg-white rounded-lg shadow-lg dark:bg-gray-800 p-4 md:p-6">
+            <h2 class="uppercase heading2">dashboard</h2>
+
+            <div class="" id="pie-chart"></div>
+            <div>
+                <div class="grid grid-cols-3 py-3">
+                    <dl>
+                        <dt class="text-base font-normal text-gray-500 dark:text-gray-400 pb-1">Deposite</dt>
+                        <dd class="leading-none text-xl font-bold text-green-500 dark:text-green-400" id="income">
+                            $23,635
+                        </dd>
+                    </dl>
+                    <dl class="text-center">
+                        <dt class="text-base font-normal text-gray-500 dark:text-gray-400 pb-1">Balance</dt>
+                        <dd class="leading-none text-xl font-bold text-black dark:text-black" id="balance">-$18,230
+                        </dd>
+                    </dl>
+                    <dl class="text-right">
+                        <dt class="text-base font-normal text-gray-500 dark:text-gray-400 pb-1">Withdraw</dt>
+                        <dd class="leading-none text-xl font-bold text-red-600 dark:text-red-500" id="expense">-$18,230
+                        </dd>
+                    </dl>
+                </div>
+
+                <!-- Line Chart -->
+            </div>
+        </div>
+
+    </section>
+    <section class="base flex flex-col lg:flex-row gap-[3rem] items-center justify-around" id="transaction">
+        <!-- Deposit section -->
+        <div
+            class="min-w-[30rem] max-w-[40rem] h-auto border-2 border-solid border-gray-200 rounded-lg px-[3rem] py-[4rem] flex flex-col gap-5 shadow-lg">
+            <h3 class="heading3">Deposit</h3>
+            <!-- input section -->
+            <div class="flex flex-col gap-4">
+                <!-- deposit amount field -->
+                <div class="relative z-0">
+                    <input type="text" id="depositeValue"
+                        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        placeholder=" " required />
+                    <label for="depositeValue"
+                        class="absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Enter
+                        your amount</label>
+                </div>
+                <!-- password field -->
+                <div class="relative z-0">
+                    <input type="password" id="passwordfield"
+                        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        placeholder=" " required />
+                    <label for="passwordfield"
+                        class="absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Enter
+                        your password</label>
+                </div>
+            </div>
+            <button type="button"
+                class="text-white bg-green-400 hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2 text-center "
+                onclick="depositebtn()">Deposit</button>
+        </div>
+
+        <!-- withdrasection -->
+        <div
+            class="min-w-[30rem] max-w-[40rem] h-auto border-2 border-solid border-gray-200 rounded-lg px-[3rem] py-[4rem] flex flex-col gap-5 shadow-lg">
+            <h3 class="heading3">Withdraw</h3>
+            <div class="flex flex-col gap-4">
+                <!-- Withdraw amount field -->
+                <div class="relative z-0">
+                    <input type="text" id="withdrawValue"
+                        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        placeholder=" " />
+                    <label for="withdrawValue"
+                        class="absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Enter
+                        your amount</label>
+                </div>
+                <!-- password field -->
+                <div class="relative z-0">
+                    <input type="password" id="passwordfield2"
+                        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        placeholder=" " />
+                    <label for="passwordfield2"
+                        class="absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Enter
+                        your password</label>
+                </div>
+            </div>
+            <button type="button"
+                class="text-white bg-red-400 hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-4 py-2 text-center "
+                onclick="withdrawbtn()">Withdraw</button>
+        </div>
+    </section>
+    <!-- data clear section -->
+    <section class="w-full h-[10rem] flex flex-col md:flex-row gap-2 items-center justify-center px-[1rem] py-[1.5rem]">
+        <button type="button"
+            class=" w-full text-white bg-red-400 hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-4 py-2 text-center "
+            onclick="clear1()">Clear all data</button>
+        <button type="button"
+            class=" w-full text-white bg-red-400 hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-4 py-2 text-center "
+            onclick="deleteAcc()">Delete your account</button>
+    </section>
+
+
+    <!-- flowbite javasript file -->
+    <script src="../../node_modules/flowbite/dist/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script>
+        // 'back' function to display the logged-in user's info
+
+        const deleteAcc =()=>{
+            const currentUserAcc = localStorage.getItem("currentuser");
+
+            if (currentUserAcc) {
+                user = localStorage.getItem(currentUserAcc)
+                userobj =JSON.parse(user)
+                localStorage.removeItem(currentUserAcc)
+                
+                alert(`The user ${userobj.username} is successfull deleted !!!`)
+
+                window.location = "./index.html"
+            }
+        }
+        const back = () => {
+            const currentUserAcc = localStorage.getItem("currentuser"); // Fetch the account number from 'currentuser'
+            // console.log(currentUserAcc);
+
+            if (currentUserAcc) {
+                const user = localStorage.getItem(currentUserAcc); // Get user object using the account number
+                if (user) {
+                    const userObj = JSON.parse(user); // Parse the user data
+                    document.getElementById("welcometext").innerHTML = `Welcome, ${userObj.username}`; // Display welcome message
+                } else {
+                    console.log("No user found.");
+                }
+            } else {
+                console.log("No user is currently logged in.");
+                window.location = "./login.html"; // Redirect to login if no user is found
+            }
+        }
+
+        back();
+
+        const logout = () => {
+            localStorage.setItem("currentuser", null)
+            window.location = "./index.html";
+
+        }
+
+        const dashboardData = () => {
+            const currentUserAcc = localStorage.getItem("currentuser");
+            const user = localStorage.getItem(currentUserAcc);
+            const userobj = JSON.parse(user)
+
+            let incomeData = userobj.transcations.deposite
+            let expenseData = userobj.transcations.withdraw
+            let BalanceData = userobj.transcations.balance
+            // Total income calculation
+            let totalIncome = incomeData.reduce((n1, n2) => n1 + n2, 0);
+
+            let totalbalance = BalanceData.reduce((n1, n2) => n1 + n2, 0)
+
+            // Average income percentage calculation
+            let incomePercentage = totalIncome / incomeData.length;
+            // incomePercentageElement.innerText = `${incomePercentage.toFixed(2)}%`;
+
+            // Total expense calculation
+            let totalExpense = expenseData.reduce((n1, n2) => n1 + n2, 0);
+
+            income.innerText = `$${totalIncome}`;
+            balance.innerText = `$${totalbalance}`
+            expense.innerText = `-$${totalExpense}`;
+
+
+        }
+
+        dashboardData()
+
+        const clear1 = () => {
+            const currentUserAcc = localStorage.getItem("currentuser");
+            const user = localStorage.getItem(currentUserAcc);
+
+            if (user) {
+                const userobj = JSON.parse(user);
+
+                // Clear the balance array
+                userobj.transcations = {
+                    deposite: [],
+                    withdraw: [],
+                    balance: [],
+                }
+
+                // Update the user object back into local storage
+                localStorage.setItem(currentUserAcc, JSON.stringify(userobj));
+
+                // Notify the user that the balance has been cleared
+                alert("Balance cleared");
+
+                // Refresh the dashboard to reflect the changes
+                dashboardData();
+            } else {
+                alert('User not found');
+            }
+        }
+
+
+        // deposite section
+        const depositebtn = () => {
+            if (depositeValue.value.length !== 0 && passwordfield.value.length !== 0) {
+                const currentUserAcc = localStorage.getItem("currentuser");
+
+                if (currentUserAcc) {
+                    const user = localStorage.getItem(currentUserAcc);
+                    const userobj = JSON.parse(user)
+
+                    if (userobj.pass == passwordfield.value) {
+                        alert('The Password is matched')
+                        userobj.transcations.deposite.push(Number(depositeValue.value))
+                        userobj.transcations.balance.push(Number(depositeValue.value))
+                        alert('The transaction is completed')
+                        const user = JSON.stringify(userobj)
+                        localStorage.setItem(currentUserAcc, user)
+
+                        depositeValue.value = "";
+                        passwordfield.value = "";
+                    } else {
+                        alert('The password is not a matched')
+                    }
+                } else {
+                    alert('user is not found')
+                }
+
+            } else {
+                alert(`Textfield cannot be empty`)
+            }
+
+            dashboardData()
+        }
+        // withdraw section
+
+        const withdrawbtn = () => {
+            if (withdrawValue.value.length !== 0 && passwordfield2.value.length !== 0) {
+                const currentUserAcc = localStorage.getItem("currentuser");
+
+                if (currentUserAcc) {
+                    const user = localStorage.getItem(currentUserAcc);
+                    const userobj = JSON.parse(user)
+                    const balance = userobj.transcations.balance.reduce((n1, n2) => n1 + n2, 0)
+                    if (userobj.pass == passwordfield2.value) {
+                        alert('The password is matched')
+                        if (balance >= withdrawValue.value) {
+
+                            userobj.transcations.withdraw.push(Number(withdrawValue.value))
+                            userobj.transcations.balance.push(Number(-withdrawValue.value))
+                            alert('The transaction is completed')
+                            const user = JSON.stringify(userobj)
+                            localStorage.setItem(currentUserAcc, user)
+
+                            withdrawValue.value = "";
+                            passwordfield2.value = "";
+                            dashboardData()
+                        } else {
+                            alert('Insufficent balance ')
+                        }
+                    } else {
+                        alert('The password is not a matched')
+                    }
+                } else {
+                    alert('user is not found')
+                }
+
+            } else {
+                alert(`Textfield cannot be empty`)
+            }
+
+
+        }
+
+        // dashboard section 
+        // ApexCharts Bar Chart Initialization
+
+
+
+        const getChartOptions = () => {
+    let depositPercentage = 0;
+    let withdrawPercentage = 0;
+
+    const currentUserAcc = localStorage.getItem("currentuser");
+    const user = localStorage.getItem(currentUserAcc);
+
+    if (user) {
+        const userobj = JSON.parse(user);
+
+        // Calculate total deposit and total withdrawal
+        let totalDeposit = userobj.transcations.deposite.reduce((n1, n2) => n1 + n2, 0);
+        let totalWithdraw = userobj.transcations.withdraw.reduce((n1, n2) => n1 + n2, 0);
+
+        // Calculate the total transactions to determine percentages
+        let totalTransactions = totalDeposit + totalWithdraw;
+
+        // Prevent division by zero if there are no transactions
+        if (totalTransactions === 0) {
+            totalTransactions = 1; // Handle the case with no transactions
+        }
+
+        // Calculate the percentage of deposit and withdrawal
+        depositPercentage = (totalDeposit / totalTransactions) * 100;
+        withdrawPercentage = (totalWithdraw / totalTransactions) * 100;
+
+        console.log(depositPercentage, withdrawPercentage);
+    }
+
+    // Return chart options with calculated percentages
+    return {
+        series: [depositPercentage, withdrawPercentage], // Use calculated percentages
+        colors: ["#50C878", "#FF0000"],
+        chart: {
+            height: 300,
+            width: "100%",
+            type: "pie",
+        },
+        stroke: {
+            colors: ["white"],
+            lineCap: "",
+        },
+        plotOptions: {
+            pie: {
+                labels: {
+                    show: true,
+                },
+                size: "100%",
+                dataLabels: {
+                    offset: -25
+                }
+            },
+        },
+        labels: ["Deposit", "Withdraw"],
+        dataLabels: {
+            enabled: true,
+            style: {
+                fontFamily: "Inter, sans-serif",
+            },
+        },
+        legend: {
+            position: "bottom",
+            fontFamily: "Inter, sans-serif",
+        },
+        yaxis: {
+            labels: {
+                formatter: function (value) {
+                    return value + "%";
+                },
+            },
+        },
+        xaxis: {
+            labels: {
+                formatter: function (value) {
+                    return value + "%";
+                },
+            },
+            axisTicks: {
+                show: false,
+            },
+            axisBorder: {
+                show: false,
+            },
+        },
+    }
+}
+getChartOptions()
+
+// Render the chart if ApexCharts is available and the DOM element is found
+if (document.getElementById("pie-chart") && typeof ApexCharts !== 'undefined') {
+    const chart = new ApexCharts(document.getElementById("pie-chart"), getChartOptions());
+    chart.render();
+}
+
+    </script>
+</body>
+
+</html>
