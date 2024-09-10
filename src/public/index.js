@@ -12,9 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     alert(`There is already a user in this account number`)
                 } else {
                     if (SignPass.value === SignConfirm.value) {
-                        noOfUser = noOfUser + 1
-                        localStorage.setItem("users", noOfUser)
-                        const users = localStorage.getItem("users")
+                        // noOfUser = noOfUser + 1
+                        // localStorage.setItem("users", noOfUser)
+                        // const users = localStorage.getItem("users")
                         const userObj = {
                             username: document.getElementById("SignUsername").value,
                             accno: document.getElementById("SignAcc").value,
